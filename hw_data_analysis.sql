@@ -24,16 +24,16 @@ ORDER BY "emp_no";
 --List the manager of each department with the following information: 
 --department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
 
-SELECT dept_manager.dept_no,
-	departments.dept_name,
-	dept_manager.emp_no,
-	data_employees.last_name,
-	data_employees.first_name,
-	dept_manager.from_date,
-	dept_manager.to_date
-FROM dept_manager
-INNER JOIN departments on dept_manager.dept_no = departments.dept_no
-INNER JOIN data_employees on dept_manager.emp_no = data_employees.emp_no
+SELECT dm.dept_no,
+	d.dept_name,
+	dm.emp_no,
+	de.last_name,
+	de.first_name,
+	dm.from_date,
+	dm.to_date
+FROM dept_manager dm
+INNER JOIN departments d on dm.dept_no = d.dept_no
+INNER JOIN data_employees de on dm.emp_no = de.emp_no
 ORDER BY "emp_no";
 	
 --List the department of each employee with the following information: employee number, last name, first name, and department name.
@@ -86,6 +86,7 @@ FROM data_employees
 GROUP BY last_name
 ORDER BY last_name_count;
 
+--Employee 499942
 SELECT * FROM data_employees
 WHERE emp_no = 499942;
 
