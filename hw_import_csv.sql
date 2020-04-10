@@ -6,8 +6,8 @@ COPY data_salaries FROM 'C:\temp-data\hw\data_salaries.csv' DELIMITER ',' CSV HE
 COPY data_titles FROM 'C:\temp-data\hw\data_titles.csv' DELIMITER ',' CSV HEADER;
 
 SELECT * FROM departments;
-SELECT * FROM data_employees LIMIT 100;
+SELECT * FROM data_employees;
 SELECT * FROM dept_emp LIMIT 100;
 SELECT * FROM dept_manager;
-SELECT * FROM data_salaries LIMIT 100;
+SELECT * FROM data_salaries;
 SELECT * FROM data_titles LIMIT 100;
