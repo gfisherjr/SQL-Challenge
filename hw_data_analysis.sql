@@ -6,13 +6,6 @@ SELECT de.emp_no,
 	ds.salary
 FROM data_employees AS de
 INNER JOIN data_salaries ds ON de.emp_no = ds.emp_no
-/*
-WHERE dept_emp.emp_no IN (
-	SELECT emp_no
-	FROM dept_emp
-	WHERE to_date = '9999-01-01'
-)
-*/
 ORDER BY "emp_no";
 
 --List employees who were hired in 1986.
@@ -44,9 +37,6 @@ SELECT dept_emp.emp_no,
 FROM dept_emp
 INNER JOIN departments on departments.dept_no = dept_emp.dept_no
 INNER JOIN data_employees on data_employees.emp_no = dept_emp.emp_no
-/*
-WHERE dept_emp.to_date = '9999-01-01'
-*/
 ORDER BY "emp_no";
 
 --List all employees whose first name is "Hercules" and last names begin with "B."
@@ -86,8 +76,9 @@ FROM data_employees
 GROUP BY last_name
 ORDER BY last_name_count;
 
+/*
 --Employee 499942
 SELECT * FROM data_employees
 WHERE emp_no = 499942;
-
+*/
 
